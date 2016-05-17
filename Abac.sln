@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abac.Business", "Abac.Business\Abac.Business.csproj", "{A7374B2E-C0D4-4EAB-812B-07BCC03309D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abac.Test", "Abac.Test\Abac.Test.csproj", "{0DE67B68-24A4-484B-8195-DB81F5A5FAFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abac.WinApplication", "Abac.WinApplication\Abac.WinApplication.csproj", "{9670AC09-B696-4A5F-B679-4398BB279277}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abac.Creator", "Abac.Creator\Abac.Creator.csproj", "{783E1B38-B191-459F-A1C6-A3DC090CE678}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abac.Application", "Abac.Application\Abac.Application.csproj", "{9670AC09-B696-4A5F-B679-4398BB279277}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{0DE67B68-24A4-484B-8195-DB81F5A5FAFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DE67B68-24A4-484B-8195-DB81F5A5FAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DE67B68-24A4-484B-8195-DB81F5A5FAFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{783E1B38-B191-459F-A1C6-A3DC090CE678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783E1B38-B191-459F-A1C6-A3DC090CE678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783E1B38-B191-459F-A1C6-A3DC090CE678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783E1B38-B191-459F-A1C6-A3DC090CE678}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9670AC09-B696-4A5F-B679-4398BB279277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9670AC09-B696-4A5F-B679-4398BB279277}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9670AC09-B696-4A5F-B679-4398BB279277}.Release|Any CPU.ActiveCfg = Release|Any CPU

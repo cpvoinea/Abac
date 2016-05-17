@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Abac.Test.Business;
+using Abac.Test.Application;
 
 namespace Abac.Test
 {
@@ -10,6 +11,7 @@ namespace Abac.Test
         private static void Main()
         {
             new TestSerialization().RunAll();
+            new TestControls().RunAll();
         }
 
         protected internal abstract bool RunAllInternal();

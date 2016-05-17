@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Abac.Application.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="sizeRatio" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">1.5</Value>
+    </Setting>
+    <Setting Name="margin" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="emptyListMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">(empty)</Value>
+    </Setting>
+    <Setting Name="nullValueMessage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">(null)</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Abac.WinApplication.Properties
+namespace Abac.Creator.Properties
 {
 
 
@@ -26,5 +26,6 @@ namespace Abac.WinApplication.Properties
                 return defaultInstance;
             }
         }
+
     }
 }

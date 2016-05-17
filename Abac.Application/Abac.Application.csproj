@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0DE67B68-24A4-484B-8195-DB81F5A5FAFB}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{9670AC09-B696-4A5F-B679-4398BB279277}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Abac.Test</RootNamespace>
-    <AssemblyName>Abac.Test</AssemblyName>
+    <RootNamespace>Abac.Application</RootNamespace>
+    <AssemblyName>Abac.Application</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,19 +34,37 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Compile Include="BaseTest.cs" />
-    <Compile Include="Business\TestSerialization.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Application\TestControls.cs" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\AbacArrayControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AbacObjectControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AbacValueControl.cs" />
+    <Compile Include="Controls\BoolControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\IAbacControl.cs" />
+    <Compile Include="Controls\NullControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NumberControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\StringControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abac.Business\Abac.Business.csproj">
@@ -55,10 +73,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
