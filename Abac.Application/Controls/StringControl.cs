@@ -7,7 +7,6 @@ namespace Abac.Application.Controls
     {
         public StringControl(AbacValue value)
         {
-            Dock = DockStyle.Fill;
             SetValue(value);
         }
 

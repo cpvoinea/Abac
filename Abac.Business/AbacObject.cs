@@ -18,7 +18,7 @@ namespace Abac.Business
         {
             var result = new AbacObject();
             var i = 1;
-            string key = null;
+            string name = null;
             while (i < json.Length)
             {
                 var c = json[i];
@@ -30,7 +30,7 @@ namespace Abac.Business
                     switch (c)
                     {
                         case '"':
-                            key = AbacValue.ParseStringValue(json.Substring(i), out nextIndex);
+                            name = AbacValue.ParseStringValue(json.Substring(i), out nextIndex);
                             i += nextIndex;
                             break;
                         case ',':
@@ -40,11 +40,11 @@ namespace Abac.Business
                             nextIndex = i + 1;
                             return result;
                         default:
-                            if (c == ':' && !string.IsNullOrEmpty(key))
+                            if (c == ':' && !string.IsNullOrEmpty(name))
                             {
-                                result._members.Add(key, AbacValue.FromJsonString(json.Substring(i + 1), out nextIndex));
+                                result.Add(name, AbacValue.FromJsonString(json.Substring(i + 1), out nextIndex));
                                 i += nextIndex + 1;
-                                key = null;
+                                name = null;
                             }
                             else
                             {
@@ -101,7 +101,7 @@ namespace Abac.Business
         /// </exception>
         public void Add(string name, AbacValue value)
         {
-            _members.Add(name, value);
+            _members[name] = value;
         }
 
         /// <summary>
@@ -331,8 +331,8 @@ namespace Abac.Business
         private string[] MembersToJsonStrings(string indent)
         {
             var strings = new List<string>();
-            foreach (var key in _members.Keys)
-                strings.Add(string.Format("{0}\"{1}\": {2}", indent, key, _members[key].ToJsonString(indent)));
+            foreach (var key in Keys)
+                strings.Add(string.Format("{0}\"{1}\": {2}", indent, key, this[key].ToJsonString(indent)));
             return strings.ToArray();
         }
 

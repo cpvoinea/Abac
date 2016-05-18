@@ -7,11 +7,23 @@ namespace Abac.Application.Controls
 {
     public class AbacObjectControl : Panel, IAbacControl
     {
+        private readonly int _margin;
+
         public AbacObjectControl()
         {
+            _margin = Properties.Settings.Default.margin;
+            Layout += AbacObjectControl_Layout;
+
             Dock = DockStyle.Fill;
-            Padding = new Padding(3);
             AutoScroll = true;
+            Padding = new Padding(_margin);
+        }
+
+        void AbacObjectControl_Layout(object sender, LayoutEventArgs e)
+        {
+            SuspendLayout();
+            ResizeControls();
+            ResumeLayout(false);
         }
 
         public AbacObjectControl(AbacValue value)
@@ -24,49 +36,11 @@ namespace Abac.Application.Controls
         {
             if (abacValue.Type != AbacValueType.Object)
                 return;
-            var value = abacValue.ObjectValue;
 
-            double sizeRatio = Properties.Settings.Default.sizeRatio;
-            int margin = Properties.Settings.Default.margin;
-            int width = 0;
-            int height = 0;
-            foreach (var key in CreateReverseIterator(value.Keys))
-            {
-                var ctrlName = new Label
-                {
-                    Dock = DockStyle.Left,
-                    Padding = new Padding(margin),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    AutoSize = true,
-                    Text = key
-                };
-                var ctrlMember = new AbacValueControl(value[key]).Control as Control;
-                var pnlMember = new Panel
-                {
-                    Dock = DockStyle.Top,
-                    Padding = new Padding(margin),
-                    Height = (int)(ctrlMember.Height * sizeRatio) + 2 * margin
-                };
-
-                pnlMember.Controls.Add(ctrlMember);
-                pnlMember.Controls.Add(ctrlName);
-                Controls.Add(pnlMember);
-
-                if (ctrlName.Width > width)
-                    width = ctrlName.Width;
-                height += pnlMember.Height;
-            }
-
-            foreach (Panel p in Controls)
-            {
-                var l = p.Controls[1] as Label;
-                if (l != null)
-                {
-                    l.AutoSize = false;
-                    l.Width = (int)(width * sizeRatio) + 2 * margin;
-                }
-            }
-            Height = height + 2 * margin;
+            SuspendLayout();
+            foreach (var name in CreateReverseIterator(abacValue.ObjectValue.Keys))
+                Controls.Add(GetMemberControl(name, abacValue.ObjectValue[name], _margin));
+            ResumeLayout(false);
         }
 
         public AbacValue GetValue()
@@ -74,7 +48,65 @@ namespace Abac.Application.Controls
             return new AbacValue();
         }
 
-        static IEnumerable<T> CreateReverseIterator<T>(ICollection<T> collection)
+        private Size GetTextSize(string text)
+        {
+            return TextRenderer.MeasureText(text, Font);
+        }
+
+        private void ResizeControls()
+        {
+            int height = 0;
+            int width = 0;
+            foreach (Panel pnlMember in Controls)
+            {
+                pnlMember.SuspendLayout();
+                Control ctrlMember = pnlMember.Controls[0];
+                Control ctrlName = pnlMember.Controls[1];
+                int memberHeight = ctrlMember.Height;
+                Size nameSize = GetTextSize(ctrlName.Text);
+
+                pnlMember.Height = (memberHeight > nameSize.Height + _margin ? memberHeight : nameSize.Height + _margin) + _margin;
+                ctrlMember.Dock = DockStyle.Fill;
+                height += pnlMember.Height;
+
+                if (nameSize.Width > width)
+                    width = nameSize.Width;
+            }
+            Height = height + _margin;
+
+            foreach(Panel pnlMember in Controls)
+            {
+                pnlMember.Controls[1].AutoSize = false;
+                pnlMember.Controls[1].Width = width;
+                pnlMember.ResumeLayout(false);
+            }
+        }
+
+        private static Panel GetMemberControl(string name, AbacValue value, int margin)
+        {
+            var pnlMember = new Panel
+            {
+                Dock = DockStyle.Top,
+                Padding = new Padding(margin)
+            };
+
+            pnlMember.SuspendLayout();
+            var ctrlName = new Label
+            {
+                Dock = DockStyle.Left,
+                TextAlign = ContentAlignment.MiddleLeft,
+                Text = name
+            };
+            var ctrlMember = new AbacValueControl(value).Control as Control ?? new NullControl();
+
+            pnlMember.Controls.Add(ctrlMember);
+            pnlMember.Controls.Add(ctrlName);
+            pnlMember.ResumeLayout(false);
+
+            return pnlMember;
+        }
+
+        private static IEnumerable<T> CreateReverseIterator<T>(ICollection<T> collection)
         {
             List<T> list = new List<T>();
             foreach (T e in collection)

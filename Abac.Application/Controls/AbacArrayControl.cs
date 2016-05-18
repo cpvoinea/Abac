@@ -48,11 +48,18 @@ namespace Abac.Application.Controls
                 case AbacValueType.Object:
                     HeaderStyle = ColumnHeaderStyle.Clickable;
                     var oItem = new ListViewItem();
-                    foreach (var m in value.ObjectValue)
+                    foreach (ColumnHeader h in Columns)
                     {
-                        if (!Columns.ContainsKey(m.Key))
-                            Columns.Add(m.Key, m.Key, -2);
-                        oItem.SubItems.Add(m.Value.ToString());
+                        oItem.SubItems.Add("");
+                    }
+                    foreach (var key in value.ObjectValue.Keys)
+                    {
+                        if (!Columns.ContainsKey(key))
+                        {
+                            Columns.Add(key, key, -2);
+                            oItem.SubItems.Add("");
+                        }
+                        oItem.SubItems[Columns[key].Index].Text = value.ObjectValue[key].ToString();
                     }
                     Items.Add(oItem);
                     break;

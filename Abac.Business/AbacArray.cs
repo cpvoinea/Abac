@@ -11,41 +11,6 @@ namespace Abac.Business
     {
         private readonly List<AbacValue> _elements = new List<AbacValue>();
 
-        #region Deserialization
-
-        internal static AbacArray FromJsonString(string json, out int nextIndex)
-        {
-            var result = new AbacArray();
-            var i = 1;
-            while (i < json.Length)
-            {
-                var c = json[i];
-                if (char.IsWhiteSpace(c))
-                {
-                    i++;
-                }
-                else
-                    switch (c)
-                    {
-                        case ',':
-                            i++;
-                            break;
-                        case ']':
-                            nextIndex = i + 1;
-                            return result;
-                        default:
-                            result._elements.Add(AbacValue.FromJsonString(json.Substring(i), out nextIndex));
-                            i += nextIndex;
-                            break;
-                    }
-            }
-
-            nextIndex = i;
-            return result;
-        }
-
-        #endregion
-
         #region Collection
 
         /// <summary>
@@ -190,6 +155,41 @@ namespace Abac.Business
 
         #endregion
 
+        #region Deserialization
+
+        internal static AbacArray FromJsonString(string json, out int nextIndex)
+        {
+            var result = new AbacArray();
+            var i = 1;
+            while (i < json.Length)
+            {
+                var c = json[i];
+                if (char.IsWhiteSpace(c))
+                {
+                    i++;
+                }
+                else
+                    switch (c)
+                    {
+                        case ',':
+                            i++;
+                            break;
+                        case ']':
+                            nextIndex = i + 1;
+                            return result;
+                        default:
+                            result.Add(AbacValue.FromJsonString(json.Substring(i), out nextIndex));
+                            i += nextIndex;
+                            break;
+                    }
+            }
+
+            nextIndex = i;
+            return result;
+        }
+
+        #endregion
+
         #region Equality
 
         public override bool Equals(object obj)
@@ -197,7 +197,7 @@ namespace Abac.Business
             var v = (AbacArray) obj;
             if (v == null)
                 return false;
-            foreach (var e in _elements)
+            foreach (var e in this)
                 if (!v.Contains(e))
                     return false;
             return true;
@@ -225,7 +225,7 @@ namespace Abac.Business
         private string[] ElementsToStrings(string indent)
         {
             var strings = new List<string>();
-            foreach (var e in _elements)
+            foreach (var e in this)
                 strings.Add(e.ToJsonString(indent));
             return strings.ToArray();
         }

@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace Abac.Application.Controls
 {
-    public class NullControl : Label, IAbacControl
+    public sealed class NullControl : Label, IAbacControl
     {
         public NullControl()
         {
-            Dock = DockStyle.Fill;
             TextAlign = ContentAlignment.MiddleLeft;
+            AutoSize = true;
             Text = Properties.Settings.Default.nullValueMessage;
         }
 

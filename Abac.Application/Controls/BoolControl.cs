@@ -1,4 +1,5 @@
-﻿using Abac.Business;
+﻿using System.Drawing;
+using Abac.Business;
 using System.Windows.Forms;
 
 namespace Abac.Application.Controls
@@ -7,7 +8,8 @@ namespace Abac.Application.Controls
     {
         internal BoolControl(AbacValue value)
         {
-            Dock = DockStyle.Fill;
+            CheckAlign = ContentAlignment.MiddleLeft;
+            AutoSize = true;
             SetValue(value);
         }
 

@@ -182,7 +182,7 @@ namespace Abac.Business
                 case AbacValueType.Number:
                     return _numberValue.ToString(CultureInfo.InvariantCulture);
                 case AbacValueType.Bool:
-                    return _boolValue.ToString();
+                    return _boolValue.ToString().ToLower();
                 default:
                     return "null";
             }
@@ -231,7 +231,7 @@ namespace Abac.Business
                             return resultStr;
                         default:
                             var valueStr = GetValueString(json.Substring(i), out nextIndex);
-                            if (nextIndex == -1)
+                            if (nextIndex <= 0)
                             {
                                 nextIndex = json.Length;
                                 return new AbacValue();
@@ -241,7 +241,7 @@ namespace Abac.Business
                                 return new AbacValue();
 
                             double resultNum;
-                            if (double.TryParse(valueStr, out resultNum))
+                            if (double.TryParse(valueStr, NumberStyles.Any, CultureInfo.InvariantCulture, out resultNum))
                                 return new AbacValue(resultNum);
                             bool resultBool;
                             if (bool.TryParse(valueStr, out resultBool))

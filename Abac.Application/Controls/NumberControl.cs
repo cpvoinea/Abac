@@ -8,7 +8,6 @@ namespace Abac.Application.Controls
     {
         public NumberControl()
         {
-            Dock = DockStyle.Fill;
             DecimalPlaces = 2;
             Minimum = decimal.MinValue;
             Maximum = decimal.MaxValue;

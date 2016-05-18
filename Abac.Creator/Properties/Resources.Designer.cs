@@ -95,5 +95,14 @@ namespace Abac.Creator.Properties {
                 return ResourceManager.GetString("jsonSample", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application.
+        /// </summary>
+        internal static string titleApplication {
+            get {
+                return ResourceManager.GetString("titleApplication", resourceCulture);
+            }
+        }
     }
 }
