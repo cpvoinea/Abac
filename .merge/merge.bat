@@ -1,0 +1,1 @@
+ilmerge /target:winexe /out:..\.output\Abac.Creator.exe ..\Abac.Creator\bin\Release\Abac.Creator.exe ..\Abac.Application\bin\Release\Abac.Application.dll ..\Abac.Business\bin\Release\Abac.Business.dll

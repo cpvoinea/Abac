@@ -1,6 +1,5 @@
 ﻿using Abac.Application.Controls;
 using Abac.Business;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Abac.Creator
@@ -15,6 +14,7 @@ namespace Abac.Creator
         internal MainForm()
         {
             InitializeComponent();
+            txtJson.Text = Properties.Resources.jsonSample;
         }
 
         #region Windows Form Designer generated code
