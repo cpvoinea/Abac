@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9A69FB1-7914-4BFD-BF4D-B122487A447B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abac.JsonSchema</RootNamespace>
+    <AssemblyName>Abac.JsonSchema</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDocument.cs" />
+    <Compile Include="IApplication.cs" />
+    <Compile Include="BaseSchema.cs" />
+    <Compile Include="Schemas\IArrayMin1Unique.cs" />
+    <Compile Include="Schemas\IArrayOfSchemasMin1.cs" />
+    <Compile Include="Schemas\IArrayOfStringsMin1Unique.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Schemas\IArray.cs" />
+    <Compile Include="Schemas\IArrayOfSchemasMin1OrSchemaDefaultEmpty.cs" />
+    <Compile Include="Schemas\IBoolean.cs" />
+    <Compile Include="Schemas\IBooleanDefaultFalse.cs" />
+    <Compile Include="Schemas\IBooleanOrSchemaDefaultEmpty.cs" />
+    <Compile Include="Schemas\IContainerValue.cs" />
+    <Compile Include="IData.cs" />
+    <Compile Include="IDocument.cs" />
+    <Compile Include="IDocumentForm.cs" />
+    <Compile Include="Schemas\IInteger.cs" />
+    <Compile Include="Schemas\INumber.cs" />
+    <Compile Include="Schemas\IObjectOfSchemasOrArraysOfStringsMin1Unique.cs" />
+    <Compile Include="Schemas\IPositiveInteger.cs" />
+    <Compile Include="Schemas\IPositiveIntegerDefault0.cs" />
+    <Compile Include="Schemas\IPositiveNumberExclusive.cs" />
+    <Compile Include="Schemas\IObject.cs" />
+    <Compile Include="Schemas\IRegEx.cs" />
+    <Compile Include="ISchema.cs" />
+    <Compile Include="Schemas\ISimpleTypes.cs" />
+    <Compile Include="Schemas\IString.cs" />
+    <Compile Include="Schemas\IStringOrArrayMin1Unique.cs" />
+    <Compile Include="Schemas\IUri.cs" />
+    <Compile Include="IValidationResult.cs" />
+    <Compile Include="Schemas\IValue.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schemas\IObjectOfSchemasDefaultEmpty.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="document.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
