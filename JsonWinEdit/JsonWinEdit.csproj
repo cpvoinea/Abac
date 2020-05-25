@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{385FBC6F-3FA1-4E49-BBA5-6532F8172E5D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JsonWinEdit</RootNamespace>
+    <AssemblyName>JsonWinEdit</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArrayEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ArrayEditorControl.Designer.cs">
+      <DependentUpon>ArrayEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BooleanEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BooleanEditorControl.Designer.cs">
+      <DependentUpon>BooleanEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditorControl.Designer.cs">
+      <DependentUpon>EditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorControlFactory.cs" />
+    <Compile Include="IntegerEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IntegerEditorControl.Designer.cs">
+      <DependentUpon>IntegerEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NullEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NullEditorControl.Designer.cs">
+      <DependentUpon>NullEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumberEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NumberEditorControl.Designer.cs">
+      <DependentUpon>NumberEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectEditorControl.Designer.cs">
+      <DependentUpon>ObjectEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectMemberControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ObjectMemberControl.Designer.cs">
+      <DependentUpon>ObjectMemberControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StringEditorControl.Designer.cs">
+      <DependentUpon>StringEditorControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ArrayEditorControl.resx">
+      <DependentUpon>ArrayEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BooleanEditorControl.resx">
+      <DependentUpon>BooleanEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntegerEditorControl.resx">
+      <DependentUpon>IntegerEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumberEditorControl.resx">
+      <DependentUpon>NumberEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectEditorControl.resx">
+      <DependentUpon>ObjectEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectMemberControl.resx">
+      <DependentUpon>ObjectMemberControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="StringEditorControl.resx">
+      <DependentUpon>StringEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JsonWinEdit.Schema\JsonWinEdit.Schema.csproj">
+      <Project>{13155c3e-56ef-47f5-88c7-aee6c702950e}</Project>
+      <Name>JsonWinEdit.Schema</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

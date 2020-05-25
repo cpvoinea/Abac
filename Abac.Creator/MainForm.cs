@@ -53,7 +53,7 @@ namespace Abac.Creator
             this.btnFont.TabIndex = 1;
             this.btnFont.Text = "&Font";
             this.btnFont.UseVisualStyleBackColor = true;
-            this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
+            this.btnFont.Click += new System.EventHandler(this.BtnFont_Click);
             // 
             // btnRun
             // 
@@ -64,7 +64,7 @@ namespace Abac.Creator
             this.btnRun.TabIndex = 0;
             this.btnRun.Text = "&Run";
             this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            this.btnRun.Click += new System.EventHandler(this.BtnRun_Click);
             // 
             // grpJson
             // 
@@ -88,7 +88,7 @@ namespace Abac.Creator
             this.txtJson.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtJson.Size = new System.Drawing.Size(978, 576);
             this.txtJson.TabIndex = 0;
-            this.txtJson.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtJson_KeyDown);
+            this.txtJson.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtJson_KeyDown);
             // 
             // MainForm
             // 
@@ -130,12 +130,12 @@ namespace Abac.Creator
             form.ShowDialog(this);
         }
 
-        private void btnRun_Click(object sender, System.EventArgs e)
+        private void BtnRun_Click(object sender, System.EventArgs e)
         {
             Run();
         }
 
-        private void txtJson_KeyDown(object sender, KeyEventArgs e)
+        private void TxtJson_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && (e.KeyCode == Keys.A))
             {
@@ -147,7 +147,7 @@ namespace Abac.Creator
                 Run();
         }
 
-        private void btnFont_Click(object sender, System.EventArgs e)
+        private void BtnFont_Click(object sender, System.EventArgs e)
         {
             fontDialog.Font = Font;
             if (fontDialog.ShowDialog(this) == DialogResult.OK)

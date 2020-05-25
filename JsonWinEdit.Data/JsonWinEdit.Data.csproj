@@ -1,19 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A7374B2E-C0D4-4EAB-812B-07BCC03309D4}</ProjectGuid>
+    <ProjectGuid>{4C7309AB-F849-4DC2-83F4-992143C64943}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Abac.Business</RootNamespace>
-    <AssemblyName>Abac.Business</AssemblyName>
+    <RootNamespace>JsonWinEdit.Data</RootNamespace>
+    <AssemblyName>JsonWinEdit.Data</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,25 +29,23 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="AbacArray.cs" />
-    <Compile Include="AbacObject.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AbacValue.cs" />
-    <Compile Include="AbacValueType.cs" />
-    <Compile Include="BaseInformation.cs" />
-    <Compile Include="BaseType.cs" />
-    <Compile Include="Information.cs" />
-    <Compile Include="InformationType.cs" />
-    <Compile Include="InformationTypeDetail.cs" />
-    <Compile Include="InformationTypes.cs" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileSystemAccess.cs" />
+    <Compile Include="IJsonValue.cs" />
+    <Compile Include="JsonArray.cs" />
+    <Compile Include="JsonBoolean.cs" />
+    <Compile Include="JsonInteger.cs" />
+    <Compile Include="JsonMember.cs" />
+    <Compile Include="JsonNull.cs" />
+    <Compile Include="JsonNumber.cs" />
+    <Compile Include="JsonObject.cs" />
+    <Compile Include="JsonSerializer.cs" />
+    <Compile Include="JsonString.cs" />
+    <Compile Include="JsonValueType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

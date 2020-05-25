@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abac.Business", "Abac.Business\Abac.Business.csproj", "{A7374B2E-C0D4-4EAB-812B-07BCC03309D4}"
 EndProject
@@ -10,6 +10,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abac.Creator", "Abac.Creator\Abac.Creator.csproj", "{783E1B38-B191-459F-A1C6-A3DC090CE678}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abac.Application", "Abac.Application\Abac.Application.csproj", "{9670AC09-B696-4A5F-B679-4398BB279277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonWinEdit.Schema", "JsonWinEdit.Schema\JsonWinEdit.Schema.csproj", "{13155C3E-56EF-47F5-88C7-AEE6C702950E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonWinEdit.Data", "JsonWinEdit.Data\JsonWinEdit.Data.csproj", "{4C7309AB-F849-4DC2-83F4-992143C64943}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonWinEdit", "JsonWinEdit\JsonWinEdit.csproj", "{385FBC6F-3FA1-4E49-BBA5-6532F8172E5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +39,23 @@ Global
 		{9670AC09-B696-4A5F-B679-4398BB279277}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9670AC09-B696-4A5F-B679-4398BB279277}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9670AC09-B696-4A5F-B679-4398BB279277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13155C3E-56EF-47F5-88C7-AEE6C702950E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13155C3E-56EF-47F5-88C7-AEE6C702950E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13155C3E-56EF-47F5-88C7-AEE6C702950E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13155C3E-56EF-47F5-88C7-AEE6C702950E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C7309AB-F849-4DC2-83F4-992143C64943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C7309AB-F849-4DC2-83F4-992143C64943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C7309AB-F849-4DC2-83F4-992143C64943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C7309AB-F849-4DC2-83F4-992143C64943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{385FBC6F-3FA1-4E49-BBA5-6532F8172E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385FBC6F-3FA1-4E49-BBA5-6532F8172E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385FBC6F-3FA1-4E49-BBA5-6532F8172E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385FBC6F-3FA1-4E49-BBA5-6532F8172E5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E7033F9-7B34-407C-8F93-B4675AE97847}
 	EndGlobalSection
 EndGlobal

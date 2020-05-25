@@ -51,6 +51,30 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\IAbacControl.cs" />
+    <Compile Include="Controls\InformationTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InformationTypeControl.Designer.cs">
+      <DependentUpon>InformationTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InformationTypeDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InformationTypeDetailControl.Designer.cs">
+      <DependentUpon>InformationTypeDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListControl.Designer.cs">
+      <DependentUpon>ListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\NullControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -78,6 +102,23 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\InformationTypeControl.resx">
+      <DependentUpon>InformationTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\InformationTypeDetailControl.resx">
+      <DependentUpon>InformationTypeDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListControl.resx">
+      <DependentUpon>ListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ListControl.ro.resx">
+      <DependentUpon>ListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
